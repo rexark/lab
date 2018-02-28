@@ -91,6 +91,12 @@ void main()
 		x[i] = (i/4)%2*a;
 		//printf("\n %f, %f, %f", x[i], y[i], z[i]);
 	}
+	translate(-a/2, -a/2);
+	rotate(45, 'x');
+	rotate(45, 'y');
+	clrscr();
+	cleardevice();
+	drawCube();
 	
 	/*cleardevice();
 	rotate(70, 'x');
@@ -104,6 +110,7 @@ void main()
 		rotate(1, 'x');
 		rotate(1, 'y');
 		rotate(1, 'z');
+		//translate(2, 2);
 		drawCube();
 		delay(30);
 	}*/
@@ -119,9 +126,9 @@ void main()
 					scanf("%f%f", &t1, &t2);
 					translate(t1, t2);
 					break;
-			case 2:	printf("Enter the angle and axis: ");
-					scanf("%f %c", &t1, &axis);
-					rotate(t1, axis);
+			case 2:	printf("Enter the angle: ");
+					scanf("%f", &t1);
+					rotate(t1, 'z');
 					break;
 		}
 		clrscr();
