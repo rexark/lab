@@ -97,17 +97,20 @@ void lineClip(double x0, double y0, double x1, double y1)
 
 void main()
 {
-	int gd = DETECT, gm;
+	int gd = DETECT, gm, x1, y1, x2, y2;
 	initgraph(&gd, &gm, "C:\\TURBOC3\\BGI");
+	
+	printf("Enter the end point coordinates of the line: ");
+	scanf("%d %d %d %d", &x1, &y1, &x2, &y2);
 	
 	xmin = getmaxx()/3;
 	xmax = 2*xmin;
 	ymin = getmaxy()/3;
 	ymax = 2*ymin;
 	drawWindow();
-	line(0, 0, 3*xmin, 3*ymin);
-	delay(500);
-	lineClip(0, 0, 3*xmin, 3*ymin);
+	line(x1, y1, x2, y2);
+	getch();
+	lineClip(x1, y1, x2, y2);
 	
 	getch();
 }
